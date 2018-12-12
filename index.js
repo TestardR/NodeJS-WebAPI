@@ -13,7 +13,14 @@
 
 var express = require('express');
 var app = express();
+
 var bodyParser = require('body-parser');
+
+var mongoose = require('mongoose');
+mongoose.connect(
+  'mongodb://localhost/cats',
+  { useNewUrlParser: true }
+);
 
 // json or form submit, parse the body and add it on to the request
 app.use(bodyParser.json());
@@ -23,7 +30,7 @@ app.use(
   })
 );
 
-var cats = require('./cats.js')(app);
+var cats = require('./cat_routes.js')(app);
 
 /*
 app.get('/', function(req, res) {
