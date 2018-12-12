@@ -17,6 +17,6 @@ app.use(
 
 var dogRoutes = require('../routes/dog.js')(app);
 
-var server = app.listen(3001, function() {
-  console.log('Server running at http://127.0.0.1:3001');
+var server = app.listen(5001, function() {
+  console.log('Server running at http://127.0.0.1:5001');
 });

@@ -10,7 +10,7 @@ module.exports = function(app) {
     async.parallel(
       {
         cat: function(callback) {
-          r({ uri: 'http://localhost:3000/cat' }, function(
+          r({ uri: 'http://localhost:5000/cat' }, function(
             error,
             response,
             body
@@ -28,7 +28,7 @@ module.exports = function(app) {
         },
 
         dog: function(callback) {
-          r({ uri: 'http://localhost:3001/dog' }, function(
+          r({ uri: 'http://localhost:5001/dog' }, function(
             error,
             response,
             body
@@ -52,5 +52,8 @@ module.exports = function(app) {
         });
       }
     );
+  });
+  app.get('/ping', function(req, res) {
+    res.json({ pong: Date.now() });
   });
 };
