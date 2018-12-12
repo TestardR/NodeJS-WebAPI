@@ -30,7 +30,7 @@ app.use(
   })
 );
 
-var cats = require('./cat_routes.js')(app);
+var cats = require('../routes/cat.js')(app);
 
 /*
 app.get('/', function(req, res) {
